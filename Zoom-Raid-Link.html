@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Raid - Select Country</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f1f5f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 450px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      margin-bottom: 10px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #7f8c8d;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .link-container {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .zoom-link {
+      color: #3498db;
+      text-decoration: none;
+      font-size: 1.2rem;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .zoom-link:hover {
+      color: #2980b9;
+    }
+
+    .zoom-details {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #34495e;
+    }
+
+    .zoom-details b {
+      color: #2980b9;
+    }
+
+    .zoom-details p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Zoom Raid - Select Your Country</h1>
+    <p>Select your country to get the Zoom meeting details:</p>
+    
+
+    <!-- Country selection dropdown -->
+    <select id="countrySelect" onchange="showZoomLink()">
+      <option value="">Select Country</option>
+      <option value="usa">USA</option>
+      <option value="india">India</option>
+    </select>
+    <P>Today's Meetings🧑‍💻</P>
+
+    <!-- Display Zoom links and details -->
+    <div class="link-container" id="zoomLinks" style="display: none;">
+      <p id="countryLabel"></p>
+      <div id="zoomLink1" class="zoom-details"></div>
+      <div id="zoomLink2" class="zoom-details"></div>
+      <div id="zoomLink3" class="zoom-details"></div>
+      <div id="zoomLink4" class="zoom-details"></div>
+      <div id="zoomLink5" class="zoom-details"></div>
+    </div>
+  </div>
+
+  <script>
+    function showZoomLink() {
+      var country = document.getElementById('countrySelect').value;
+      var countryLabel = document.getElementById('countryLabel');
+      var zoomLinks = document.getElementById('zoomLinks');
+
+      // Hide the link container initially
+      zoomLinks.style.display = 'none';
+
+      // Clear previous details
+      document.getElementById('zoomLink1').innerHTML = '';
+      document.getElementById('zoomLink2').innerHTML = '';
+      document.getElementById('zoomLink3').innerHTML = '';
+      document.getElementById('zoomLink4').innerHTML = '';
+      document.getElementById('zoomLink5').innerHTML = '';
+
+      // Show the Zoom links and details based on the selected country
+      if (country === 'usa') {
+        countryLabel.textContent = 'USA Zoom Links:';
+
+        // Zoom link 1 details
+        document.getElementById('zoomLink1').innerHTML = ` 
+          <b>Host:</b> John Doe<br>
+          <b>Meeting ID:</b> 123-456-7890<br>
+          <b>Password:</b> NAA1234<br>
+          <b>Time:</b> 10:00 AM (EST)<br>
+          <a href="https://zoom.us/j/1234567890" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 2 details
+        document.getElementById('zoomLink2').innerHTML = `
+          <b>Host:</b> Jane Smith<br>
+          <b>Meeting ID:</b> 234-567-8901<br>
+          <b>Password:</b> TYSA2345<br>
+          <b>Time:</b> 12:00 PM (EST)<br>
+          <a href="https://zoom.us/j/2345678901" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 3 details
+        document.getElementById('zoomLink3').innerHTML = `
+          <b>Host:</b> Bob Johnson<br>
+          <b>Meeting ID:</b> 345-678-9012<br>
+          <b>Password:</b> UJEN0985<br>
+          <b>Time:</b> 2:00 PM (EST)<br>
+          <a href="https://zoom.us/j/3456789012" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 4 details
+        document.getElementById('zoomLink4').innerHTML = `
+          <b>Host:</b> Alice Brown<br>
+          <b>Meeting ID:</b> 456-789-0123<br>
+          <b>Password:</b> KL098L5<br>
+          <b>Time:</b> 4:00 PM (EST)<br>
+          <a href="https://zoom.us/j/4567890123" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 5 details
+        document.getElementById('zoomLink5').innerHTML = `
+          <b>Host:</b> Mike Williams<br>
+          <b>Meeting ID:</b> 567-890-1234<br>
+          <b>Password:</b> ULTRA5678<br>
+          <b>Time:</b> 6:00 PM (EST)<br>
+          <a href="https://zoom.us/j/5678901234" class="zoom-link">Join Zoom Meeting</a>
+        `;
+
+      } else if (country === 'india') {
+        countryLabel.textContent = 'India Zoom Links:';
+
+        // Zoom link 1 details
+        document.getElementById('zoomLink1').innerHTML = `
+          <b>Host:</b> Raj Kumar<br>
+          <b>Meeting ID:</b> 789-012-3456<br>
+          <b>Password:</b> INDIANPROUD1234<br>
+          <b>Time:</b> 8:30 PM (IST)<br>
+          <a href="https://zoom.us/j/7890123456" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 2 details
+        document.getElementById('zoomLink2').innerHTML = `
+          <b>Host:</b> Priya Sharma<br>
+          <b>Meeting ID:</b> 890-123-4567<br>
+          <b>Password:</b> TEACH12<br>
+          <b>Time:</b> 9:30 PM (IST)<br>
+          <a href="https://zoom.us/j/8901234567" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 3 details
+        document.getElementById('zoomLink3').innerHTML = `
+          <b>Host:</b> Arjun Yadav<br>
+          <b>Meeting ID:</b> 901-234-5678<br>
+          <b>Password:</b> IND3456<br>
+          <b>Time:</b> 10:30 PM (IST)<br>
+          <a href="https://zoom.us/j/9012345678" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 4 details
+        document.getElementById('zoomLink4').innerHTML = `
+          <b>Host:</b> Sunita Patel<br>
+          <b>Meeting ID:</b> 012-345-6789<br>
+          <b>Password:</b> SUNPAT124<br>
+          <b>Time:</b> 11:30 PM (IST)<br>
+          <a href="https://zoom.us/j/0123456789" class="zoom-link">Join Zoom Meeting</a>
+        `;
+        
+        // Zoom link 5 details
+        document.getElementById('zoomLink5').innerHTML = `
+          <b>Host:</b> Neel Gupta<br>
+          <b>Meeting ID:</b> 123-456-7890<br>
+          <b>Password:</b> GUPTA2024<br>
+          <b>Time:</b> 12:30 AM (IST)<br>
+          <a href="https://zoom.us/j/1234567890" class="zoom-link">Join Zoom Meeting</a>
+        `;
+      }
+
+      // Display the link container
+      zoomLinks.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
